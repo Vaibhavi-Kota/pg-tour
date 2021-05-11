@@ -8,7 +8,7 @@ let auth=require("./controllers/auth");
 let alert = require('alert');
 const url = require('url');
 window:true;
-mongoose.connect('mongodb+srv://Vaibhavi-Kota:vaibhu9999@travingo.vfkhz.mongodb.net/pgtour?retryWrites=true&w=majority', {
+mongoose.connect(process.env.MONGODB_URI || 'mongodb+srv://Vaibhavi-Kota:vaibhu9999@travingo.vfkhz.mongodb.net/pgtour?retryWrites=true&w=majority', {
 	useNewUrlParser: true,
 	useUnifiedTopology:true
 });
