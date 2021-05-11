@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>PgTour-Admin</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+  <link href="../img/logo.jpg" rel="icon">
+  <link href="../img/logo.jpg" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Nunito:300,300i,400,400i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="../vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="../vendor/icofont/icofont.min.css" rel="stylesheet">
+  <link href="../vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+  <link href="../vendor/remixicon/remixicon.css" rel="stylesheet">
+  <link href="../vendor/venobox/venobox.css" rel="stylesheet">
+  <link href="../vendor/owl.carousel/../owl.carousel.min.css" rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+  <link href="../css/style.css" rel="stylesheet">
+
+  <!-- =======================================================
+  * Template Name: Tempo - v2.2.1
+  * Template URL: https://bootstrapmade.com/tempo-free-onepage-bootstrap-theme/
+  * Author: BootstrapMade.com
+  * License: https://bootstrapmade.com/license/
+  ======================================================== -->
+</head>
+
+<body>
+
+  <!-- ======= Header ======= -->
+  <header id="header" class="fixed-top ">
+    <div class="container d-flex align-items-center">
+
+      <h1 class="logo mr-auto"><a href="index.html">PG Tour</a></h1>
+      <!-- Uncomment below if you prefer to use an image logo -->
+      <!-- <a href="index.html" class="logo mr-auto"><img src="../img/logo.png" alt="" class="img-fluid"></a>-->
+
+      <nav class="nav-menu d-none d-lg-block">
+        <ul>
+          <li class="active"><a href="/home">Home</a></li>
+          <li><a href="#roomdetails">Rooms</a></li>
+          <li><a href="#addpayment">Add Payment</a></li>
+          <li><a href="#complaints">Complaints</a></li>
+          <li><a href="#contact">Contact</a></li>
+          <li><a href="/logout">Logout</a></li>
+
+        </ul>
+      </nav><!-- .nav-menu -->
+
+    </div>
+  </header><!-- End Header -->
+
+  <!-- ======= Hero Section ======= -->
+  <section id="hero">
+    <div class="hero-container">
+      <h3>Welcome <strong>admin</strong></h3>
+      <h1>SL Ladies PG</h1>
+      <h2>Comfort and Safety are our top priorities</h2>
+    </div>
+  </section><!-- End Hero -->
+
+  <main id="main">
+
+    <!-- ======= About Section ======= -->
+    <section id="roomdetails">
+      <div class="container" style="width:45%">
+
+        <div class="section-title">
+          <h2>ROOMS</h2>
+          <form class="room-form" method="POST" action=/selectroom>
+          <%for(i=0;i<4;i++){%>
+          <p><%=(i+1)%>floor</p>
+          <div style="border: 3px solid black;display:flex;flex-direction:row;margin:30px 0 0 0;">
+            <%for(j=0;j<4;j++){%>
+                    
+                    <button id="myButton" style="height:50px;width:60px;<%if((rooms[4*i+j].sharing-rooms[4*i+j].users.length)==0){%>background:#737373<%}else{%>background:#f5f5f0<%}%>; margin:10px 50px 10px 50px;" value="<%=rooms[4*i+j].roomnum%>" name="roomno">
+                <%=rooms[4*i+j].roomnum%>
+              </button>
+                  
+                <%}%>
+              
+              </div><%}%>
+          </form>
+        </div>
+    </section><!-- End About Section -->
+
+    
+
+    
+
+    <!-- ======= Pricing Section ======= -->
+    <section id="pricing" class="pricing">
+      <div class="container">
+
+        <div class="section-title">
+          <h2>Pricing</h2>
+          
+        </div>
+
+        <div class="row">
+
+          <div class="col-lg-4 col-md-6">
+            <div class="box">
+              <h3>2 Sharing</h3>
+              <h4>7500/-<span> / month</span></h4>
+              <h6 style="text-decoration:underline;">Includes</h6>
+              <ul>
+                <li>Food</li>
+                <li>Electricity</li>
+                <li>Amenities</li>
+                
+              </ul>
+              <div class="btn-wrap">
+                <a href="#roomdetails" class="btn-buy">View rooms</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6">
+            <div class="box">
+              <h3>3 Sharing</h3>
+              <h4>6500/-<span> / month</span></h4>
+              <h6 style="text-decoration:underline;">Includes</h6>
+              <ul>
+                <li>Food</li>
+                <li>Electricity</li>
+                <li>Amenities</li>
+                
+              </ul>
+              <div class="btn-wrap">
+                <a href="#roomdetails" class="btn-buy">View rooms</a>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section><!-- End Pricing Section -->
+
+    
+
+    <!-- ======= Team Section ======= -->
+    <section id="addpayment" class="team">
+      <div class="container">
+
+        <div class="section-title">
+          <h2>Add Payment</h2>
+        </div>
+
+        <div class="row">
+
+          <form class="payment-form" method="POST" action=/addpayment>
+            <div class="form-group">
+               <label for="payment-room-no">Room No</label>
+               <input type="number" name="roomno"class="form-control" id="payment-room-no" aria-describedby="emailHelp"placeholder="Enter room no" required pattern="([0-9]{3})">
+            </div>
+            <div class="form-group">
+               <label for="payment-username">Name</label>
+               <input type="String" name="username"class="form-control" id="payment-username" aria-describedby="emailHelp"placeholder="Enter name" required>
+            </div>
+            <div class="form-group">
+               <label for="payment-emailid">Email-id</label>
+               <input type="String" name="emailid" class="form-control" id="payment-emailid" aria-describedby="emailHelp"placeholder="Enter user emailid" required>
+            </div>
+            <button type="submit" class="btn btn-primary">Add payment</button>
+          </form>
+
+        </div>
+        <br>
+        <a href="/payments" class="btn btn-success">View all Payments</a>
+
+      </div>
+    </section><!-- End Team Section -->
+    <section id="complaints">
+      <div class="container">
+        <div class="section-title">
+          <h2>Complaints</h2>
+        </div>
+
+          <a href="/allcomplaints" class="btn btn-success">View all Complaints</a>
+      </div>
+
+    </section>
+    <!-- ======= Contact Section ======= -->
+    <section id="contact" class="contact">
+      <div class="container">
+
+        <div class="section-title">
+          <h2>Contact</h2>
+          <h3>Contact <span>Us</span></h3>
+          <
+        </div>
+
+        <div>
+          <iframe style="border:0; width: 100%; height: 270px;" src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d12097.433213460943!2d-74.0062269!3d40.7101282!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xb89d1fe6bc499443!2sDowntown+Conference+Center!5e0!3m2!1smk!2sbg!4v1539943755621" frameborder="0" allowfullscreen></iframe>
+        </div>
+
+        <div class="row mt-5">
+
+          <div class="col-lg-4">
+            <div class="info">
+              <div class="address">
+                <i class="icofont-google-map"></i>
+                <h4>Location:</h4>
+                <p>A108 Adam Street, New York, NY 535022</p>
+              </div>
+
+              <div class="email">
+                <i class="icofont-envelope"></i>
+                <h4>Email:</h4>
+                <p>info@example.com</p>
+              </div>
+
+              <div class="phone">
+                <i class="icofont-phone"></i>
+                <h4>Call:</h4>
+                <p>+1 5589 55488 55s</p>
+              </div>
+
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </section><!-- End Contact Section -->
+
+  </main><!-- End #main -->
+
+  <!-- ======= Footer ======= -->
+  <footer id="footer">
+
+    
+
+    <div class="container d-md-flex py-4">
+
+      <div class="mr-md-auto text-center text-md-left">
+        <div class="copyright">
+          &copy; Copyright. All Rights Reserved
+        </div>
+        <div class="credits">
+          <!-- All the links in the footer should remain intact. -->
+          <!-- You can delete the links only if you purchased the pro version. -->
+          <!-- Licensing information: https://bootstrapmade.com/license/ -->
+          <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/tempo-free-onepage-bootstrap-theme/ -->
+          
+        </div>
+      </div>
+      <div class="social-links text-center text-md-right pt-3 pt-md-0">
+        <a href="/" class="twitter"><i class="bx bxl-twitter"></i></a>
+        <a href="/" class="facebook"><i class="bx bxl-facebook"></i></a>
+        <a href="/" class="instagram"><i class="bx bxl-instagram"></i></a>
+        <a href="/" class="google-plus"><i class="bx bxl-skype"></i></a>
+        <a href="/" class="linkedin"><i class="bx bxl-linkedin"></i></a>
+      </div>
+    </div>
+  </footer><!-- End Footer -->
+
+  <a href="#" class="back-to-top"><i class="ri-arrow-up-line"></i></a>
+
+  <!-- Vendor JS Files -->
+  <script src="../vendor/jquery/jquery.min.js"></script>
+  <script src="../vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="../vendor/jquery.easing/jquery.easing.min.js"></script>
+  <script src="../vendor/php-email-form/validate.js"></script>
+  <script src="../vendor/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="../vendor/venobox/venobox.min.js"></script>
+  <script src="../vendor/owl.carousel/owl.carousel.min.js"></script>
+
+  <!-- Template Main JS File -->
+  <script src="../js/main.js"></script>
+
+</body>
+
+</html>

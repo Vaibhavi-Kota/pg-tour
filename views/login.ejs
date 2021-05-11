@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Login</title>
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+		<link rel="stylesheet" href="../css/login.css">
+
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+	</head>
+	
+	
+	<body>
+		
+		<!--header-->
+		<h1>Login / Register</h1>
+		
+		
+        <div class="container">
+            <div class="row">
+                <div class="col-6 offset-3 login-container">
+                    <h1>Login Page</h1>
+
+                    <ul class="nav nav-tabs" id="myTab" role="tablist">
+                        <li class="nav-item active loginact">
+                            <a class="nav-link" id="sign-in-tab" data-toggle="tab" href="#sight-in" role="tab" aria-controls="sing-in" aria-selected="true">Sign In</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" id="register-tab" data-toggle="tab" href="#register" role="tab" aria-controls="register" aria-selected="false">Register</a>
+                        </li>
+                        
+                    </ul>
+                    <div class="tab-content" id="myTabContent">
+                        <div class="tab-pane fade active in loginact" id="sight-in" role="tabpanel" aria-labelledby="sight-in-tab">
+                            <form class="sign-in-form">
+                                <div class="form-group" style="padding-top:10px;">
+                                    <label for="sign-in-email">Email address</label>
+                                    <input type="email" class="form-control" id="sign-in-email" aria-describedby="emailHelp" placeholder="Enter email" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="sign-in-password">Password</label>
+                                    <input type="password" class="form-control" id="sign-in-password" placeholder="Password" required>
+                                </div>
+                            
+                                <button type="submit" class="btn btn-primary">Sign In</button>
+                            </form>
+                        </div>
+                        <div class="tab-pane fade" id="register" role="tabpanel" aria-labelledby="register-tab">
+                            <form class="register-form">
+								<div class="form-group" style="padding-top:10px;">
+                                    <label for="register-name">Name</label>
+                                    <input type="text" class="form-control" id="register-name" placeholder="Enter name" required>
+                                </div>
+								<div class="form-group">
+                                    <label for="register-phoneno">Phone no</label>
+                                    <input type="text" class="form-control" id="register-phoneno" placeholder="Enter phoneno" pattern="[0-9]{10}" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="register-email">Email address</label>
+                                    <input type="email" class="form-control" id="register-email" aria-describedby="emailHelp" placeholder="Enter email" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="register-password">Password</label>
+                                    <input type="password" class="form-control" id="register-password" placeholder="Password" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="register-re-enter-password">Re-enter password</label>
+                                    <input type="password" class="form-control" id="register-re-enter-password" placeholder="Re-enter password" required>
+                                </div>
+                            
+                                <button type="submit" class="btn btn-primary">Register</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    <script src="js/login.js"></script>
+	</body>
+</html>

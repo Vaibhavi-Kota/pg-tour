@@ -1,0 +1,12 @@
+body::after {
+	content: "";
+	 background: rgb(230, 255, 243);
+	 height: 100%;
+	position: fixed; 
+	  top: 0; 
+	  left: 0; 
+	 min-width: 100%;
+	min-height: 100%;
+	 opacity: 0.3;
+	z-index: -1;   
+}

@@ -1,0 +1,34 @@
+{
+  "name": "pgtour",
+  "version": "1.0.0",
+  "description": "``` ┌───────────────────────────────────────────────┐                                        _             __ _  ___   ___  _ __ _ __ ___   (_) ___       / _` |/ _ \\ / _ \\| '__| '_ ` _ \\  | |/ _ \\     | (_| | (_) | (_) | |  | | | | | |_| | (_) |     \\__, |\\___/ \\___/|_|  |_| |_| |_(_)_|\\___/      |___/                                       \t\t\t     🌩 𝘼𝙣𝙮𝙤𝙣𝙚 𝙘𝙖𝙣 𝙙𝙚𝙫𝙚𝙡𝙤𝙥! └───────────────────────────────────────────────┘ ```",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node app.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "alert": "^5.0.10",
+    "bcrypt": "^5.0.1",
+    "body-parser": "^1.19.0",
+    "browserify": "^17.0.0",
+    "cookie-parser": "^1.4.5",
+    "ejs": "^3.1.6",
+    "express": "^4.17.1",
+    "js-alert": "^1.0.4",
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^5.12.8",
+    "popups": "^1.1.3",
+    "url": "^0.11.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Vaibhavi-Kota/pgtour.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Vaibhavi-Kota/pgtour/issues"
+  },
+  "homepage": "https://github.com/Vaibhavi-Kota/pgtour#readme"
+}
