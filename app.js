@@ -47,11 +47,7 @@ let complaint=require("./modules/user").complaint;
 // }
 // });
 
-function getSubdomain(h) {
-  var parts = h.split(".");
-	if(parts.length == 2) return "www";
-	return parts[0];
-}
+
 app.get('/',async(req,res)=>
 	   {
 	let token=req.cookies['auth_token'];
@@ -73,7 +69,7 @@ app.get('/home',async(req,res)=>
 app.get('/login',async(req,res)=>
 	   {
 	let token=req.cookies['auth_token'];
-	var subdomain = getSubdomain(req.headers.host);
+	var subdomain=req.headers.host;
 	if(token && auth.checktoken(token)){
 		let someuser=auth.checktoken(token);
 		 let curr=someuser.userid;
