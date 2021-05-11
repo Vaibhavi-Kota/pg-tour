@@ -304,6 +304,7 @@
 		</div>
 	  </section>
     <%if(curuser!=null){%>
+    <%if(curuser.emailid=="admin@gmail.com"){%>
 			<section id="payments">
       <div class="container">
 
@@ -337,7 +338,7 @@
         <h3>No Payments</h3><%}%>
       </div>
     </section>
-	<%}%>	
+	<%}}%>	
     <!-- ======= Contact Section ======= -->
     <section id="contact" class="contact">
       <div class="container">
@@ -426,6 +427,16 @@
 
   <!-- Template Main JS File -->
   <script src="../js/main.js"></script>
+  <script type="text/javascript">
+    $("#formButton").click(function() {  
+      $("#addmember").toggle();
+  });
+  </script>
+  <script type="text/javascript">
+    $("#removeButton").click(function() {  
+      $("#removemember").toggle();
+  });
+  </script>
 
 </body>
 
