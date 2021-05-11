@@ -6,7 +6,8 @@ signinform.addEventListener('submit',function(e)
 	e.preventDefault();
 	let email=document.getElementById('sign-in-email').value;
 	let password=document.getElementById('sign-in-password').value;
-	fetch('http://localhost:3000/users/login',{
+	let subdomain=document.getElementById('subdomain').value;
+	fetch('http://'+subdomain+'/users/login',{
 		method: 'POST',
 		headers:{
 			'Content-Type' :'application/json'
@@ -30,11 +31,12 @@ registerform.addEventListener('submit',function(e)
 	let repassword=document.getElementById('register-re-enter-password').value;
 	let name=document.getElementById('register-name').value;
 	let phoneno=document.getElementById('register-phoneno').value;
+	let subdomain=document.getElementById('subdomain').value;
 	if(password!=repassword)
 		{
 			return;
 		}
-	fetch('http://localhost:3000/users/register',{
+	fetch('http://'+subdomain+'/users/register',{
 		method: 'POST',
 		headers:{
 			'Content-Type' :'application/json'
